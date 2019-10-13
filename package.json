@@ -1,0 +1,21 @@
+{
+  "name": "phile-render",
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "eslint --ext .js,.vue . src"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-supported": "^1.4.0",
+    "dxf-parser": "^0.6.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "three-fbx-loader": "^1.0.3",
+    "three-full": "^11.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  },
+  "eslintIgnore": [
+    "src/dxf-loader.js"
+  ]
+}
