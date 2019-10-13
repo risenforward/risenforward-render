@@ -1,4 +1,11 @@
 import * as THREE from 'three'
+import { AssimpLoader } from 'three/examples/jsm/loaders/AssimpLoader.js';
+import { GCodeLoader } from 'three/examples/jsm/loaders/GCodeLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
+import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
+import { TDSLoader } from 'three/examples/jsm/loaders/TDSLoader.js';
 import solidworksLoader from './solidworks'
 
 export default function (extraLoaders) {
@@ -32,7 +39,7 @@ export default function (extraLoaders) {
         })
       },
       svg (src) {
-        const svg = new THREE.SVGLoader()
+        const svg = new SVGLoader()
         return new Promise((resolve, reject) => {
           svg.load(src,
             (paths) => {
@@ -64,7 +71,7 @@ export default function (extraLoaders) {
     },
     '3d': {
       '3ds': function (src) {
-        const tds = new THREE.TDSLoader()
+        const tds = new TDSLoader()
         return new Promise((resolve, reject) => {
           tds.load(src,
             (model) => {
@@ -80,7 +87,7 @@ export default function (extraLoaders) {
         })
       },
       assimp (src) {
-        const assimp = new THREE.AssimpLoader()
+        const assimp = new AssimpLoader()
         return new Promise((resolve, reject) => {
           assimp.load(src,
             (model) => {
@@ -105,7 +112,7 @@ export default function (extraLoaders) {
         })
       },
       gcode (src) {
-        const gcode = new THREE.GCodeLoader()
+        const gcode = new GCodeLoader()
         return new Promise((resolve, reject) => {
           gcode.load(src,
             (model) => {
@@ -117,7 +124,7 @@ export default function (extraLoaders) {
         })
       },
       gltf (src) {
-        const gltf = new THREE.GLTFLoader()
+        const gltf = new GLTFLoader()
         return new Promise((resolve, reject) => {
           gltf.load(src,
             (model) => {
@@ -129,7 +136,7 @@ export default function (extraLoaders) {
         })
       },
       obj (src) {
-        const obj = new THREE.OBJLoader()
+        const obj = new OBJLoader()
         return new Promise((resolve, reject) => {
           obj.load(src,
             (mesh) => {
@@ -143,7 +150,7 @@ export default function (extraLoaders) {
         })
       },
       stl (src) {
-        const stl = new THREE.STLLoader()
+        const stl = new STLLoader()
         return new Promise((resolve, reject) => {
           stl.load(src,
             (geometry) => {

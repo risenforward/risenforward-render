@@ -25,6 +25,7 @@
 
 <script>
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import GLSupported from '@mapbox/mapbox-gl-supported'
 import LoaderFactory from './src/scene_loader'
 import { addTextToGrid } from './src/helpers'
@@ -91,9 +92,9 @@ export default {
       handler () {
         this.emitUpdate = true
         this.eulerRotation.set(
-          THREE._Math.degToRad(this.rotation.x),
-          THREE._Math.degToRad(this.rotation.y),
-          THREE._Math.degToRad(this.rotation.z)
+          THREE.Math.degToRad(this.rotation.x),
+          THREE.Math.degToRad(this.rotation.y),
+          THREE.Math.degToRad(this.rotation.z)
         )
       }
     }
@@ -155,7 +156,7 @@ export default {
         canvas: this.$refs.canvas
       })
       this.scene.background = new THREE.Color(this.color)
-      this.orbit = new THREE.OrbitControls(this.camera, this.renderer.domElement)
+      this.orbit = new OrbitControls(this.camera, this.renderer.domElement)
       this.orbit.screenSpacePanning = true
       this.resize()
       this.scene.add(this.light)
@@ -309,9 +310,9 @@ export default {
       }
       this.elements.group.quaternion.set(0, 0, 0, 1)
       this.eulerRotation.set(
-        THREE._Math.degToRad(this.rotation.x),
-        THREE._Math.degToRad(this.rotation.y),
-        THREE._Math.degToRad(this.rotation.z)
+        THREE.Math.degToRad(this.rotation.x),
+        THREE.Math.degToRad(this.rotation.y),
+        THREE.Math.degToRad(this.rotation.z)
       )
       this.elements.shadowModel.setRotationFromEuler(this.eulerRotation)
       this.elements.shadowBox.update()
