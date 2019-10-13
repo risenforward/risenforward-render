@@ -1,4 +1,4 @@
-import * as THREE from 'three-full'
+import * as THREE from 'three'
 import request from 'request-promise-native'
 
 export default async function solidworksLoader (src) {

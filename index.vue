@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import * as THREE from 'three-full'
+import * as THREE from 'three'
 import GLSupported from '@mapbox/mapbox-gl-supported'
 import LoaderFactory from './src/scene_loader'
 import { addTextToGrid } from './src/helpers'

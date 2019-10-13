@@ -1,4 +1,4 @@
-import * as THREE from 'three-full'
+import * as THREE from 'three'
 
 function makeTextSprite (canvas, pos, size) {
   const texture = new THREE.CanvasTexture(canvas)

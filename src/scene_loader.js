@@ -1,4 +1,4 @@
-import * as THREE from 'three-full'
+import * as THREE from 'three'
 import solidworksLoader from './solidworks'
 
 export default function (extraLoaders) {
